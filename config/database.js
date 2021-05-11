@@ -27,8 +27,13 @@ module.exports = ({ env }) => {
           settings: {
             client: 'postgres',
             ...connectionParsed,
+            ssl: {
+              rejectUnauthorized: env.bool('DATABASE_SSL_SELF', false), // For self-signed certificates
+            },
           },
-          options: {}
+          options: {
+            ssl: env.bool('DATABASE_SSL', false),
+          },
         },
       },
     };
