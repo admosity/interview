@@ -2,8 +2,5 @@
   "name": "Halo Interview - Todo Backend",
   "addons": [
     "heroku-postgresql:hobby-dev"
-  ],
-  "scripts": {
-    "postdeploy": "npm run build"
-  }
+  ]
 }
